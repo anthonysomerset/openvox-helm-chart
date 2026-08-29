@@ -70,7 +70,8 @@ spec:
           command: [ "sh", "-c" ]
           args:
             - mkdir -p /opt/puppetlabs/server/data/puppetdb/logs;
-              chown -R {{ .Values.global.securityContext.runAsUser }}:{{ .Values.global.securityContext.runAsGroup }} /opt/puppetlabs/server/data/puppetdb/logs 
+              chown -R {{ .Values.global.securityContext.runAsUser }}:{{ .Values.global.securityContext.runAsGroup }} /opt/puppetlabs/server/data/puppetdb/logs;
+              chown -R {{ .Values.global.securityContext.runAsUser }}:{{ .Values.global.securityContext.runAsGroup }} /opt/puppetlabs/server/data/puppetdb;
           resources:
             requests:
               cpu: 20m
